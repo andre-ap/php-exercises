@@ -18,16 +18,4 @@
             return mb_substr($numero, 0, 4) . ' ' . mb_substr ($numero, 3, 4);
         }
     }
-    
-    $num = [
-        '30044000',
-        '2225271727',
-        '22987654321',
-        '08007024000',
-        '123abc'
-    ];
-
-    foreach ($num as $numero) {
-        echo "{$numero} -> ", formatador($numero), PHP_EOL;
-    }
 ?>
