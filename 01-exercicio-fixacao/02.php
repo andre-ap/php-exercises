@@ -6,5 +6,10 @@ function formatarArray (&$numeros){
     for ($i=0; $i<$qtd; $i++){
         $numeros[$i] = formatador($numeros[$i]);
     }
+
+    foreach ($numeros as $numero) {
+
+    }
 }
+
 

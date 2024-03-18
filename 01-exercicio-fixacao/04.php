@@ -28,4 +28,38 @@ function formatar ($inventores) {
     return $array_formatado;
 }
 
-print_r (formatar($inventores));
+function calculaMediaVivida ($inventores) {
+    $totalVivido = 0;
+    $qtdInventores = count ($inventores);
+
+    foreach ($inventores as $inventor){
+        $viveu = $inventor['morte'] - $inventor['nasc'];
+        $totalVivido += $viveu;
+    }
+
+    return $totalVivido / $qtdInventores;
+}
+
+function viveuEm ($inventores, $seculo){
+    $min = (($seculo - 1) * 100) + 1;
+    $max = (($seculo - 1) * 100) + 100;
+    
+    $viveramNoSec = [];
+
+    foreach ($inventores as $inventor) {
+        if( ($inventor['nasc'] >= $min && $inventor['nasc'] <= $max) ||
+            ($inventor['morte'] >= $min && $inventor['morte'] <= $max)
+        ){
+            $viveramNoSec[] = $inventor;
+        }
+    }
+    return $viveramNoSec;
+}
+
+function ordenaPorSobrenome ($inventores) {
+    // Nao sei
+}
+
+
+var_dump(asort($inventores[]));
+
